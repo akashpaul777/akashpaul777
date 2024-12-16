@@ -1,0 +1,199 @@
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import json
+
+url = 'https://www.imdb.com/chart/top/'
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+    'Connection': 'keep-alive'}
+
+response = requests.get(url, headers=headers)
+
+if response.status_code == 200:
+    soup = BeautifulSoup(response.content, 'html.parser')
+    print(soup.prettify())
+else:
+    print(f"Failed to fetch the page. Status code: {response.status_code}")
+
+soup = BeautifulSoup(response.content, 'html.parser')
+soup
+
+print(soup.prettify())
+
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.imdb.com/chart/top/'
+
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+    'Connection': 'keep-alive'
+}
+
+response = requests.get(url, headers=headers)
+
+if response.status_code == 200:
+    soup = BeautifulSoup(response.content, 'html.parser')
+    
+    movies_table = soup.find('tbody', class_='lister-list')
+    movies = movies_table.find_all('tr')
+
+    for movie in movies:
+        title_column = movie.find('td', class_='titleColumn')
+        rank = title_column.get_text(strip=True).split('.')[0]
+        title = title_column.a.get_text()
+
+        year = title_column.span.get_text(strip=True).strip('()')
+
+        rating = movie.find('td', class_='ratingColumn imdbRating').strong.get_text()
+
+        print(f"Rank: {rank}, Title: {title}, Year: {year}, Rating: {rating}")
+else:
+    print(f"Failed to fetch the page. Status code: {response.status_code}")
+
+
+import requests
+from bs4 import BeautifulSoup
+import json
+
+url = 'https://www.imdb.com/chart/top/'
+
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
+    'Accept-Language': 'en-US,en;q=0.9'
+}
+
+response = requests.get(url, headers=headers)
+
+if response.status_code == 200:
+    soup = BeautifulSoup(response.content, 'html.parser')
+    
+    script_tag = soup.find('script', type='application/ld+json')
+    
+    if script_tag:
+        structured_data = json.loads(script_tag.string)
+        
+        for item in structured_data['itemListElement']:
+            movie = item['item']
+            rank = item['@type'].split('/')[-1]
+            title = movie['name']
+            year = movie.get('contentRating', 'N/A')
+            rating = movie['aggregateRating']['ratingValue']
+            description = movie['description']
+            image = movie['image']
+            
+            print(f"Rank: {rank}, Title: {title}, Year: {year}, Rating: {rating}, Description: {description}, Image URL: {image}")
+    else:
+        print("Structured data script not found.")
+else:
+    print(f"Failed to fetch the page. Status code: {response.status_code}")
+
+import requests
+from bs4 import BeautifulSoup
+import json
+import pandas as pd
+
+url = 'https://www.imdb.com/chart/top/'
+
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
+    'Accept-Language': 'en-US,en;q=0.9'
+}
+
+response = requests.get(url, headers=headers)
+
+if response.status_code == 200:
+    soup = BeautifulSoup(response.content, 'html.parser')
+    
+    script_tag = soup.find('script', type='application/ld+json')
+    
+    if script_tag:
+        structured_data = json.loads(script_tag.string)
+        
+        movies_data = []
+        for item in structured_data['itemListElement']:
+            movie = item['item']
+            rank = item['@type'].split('/')[-1]
+            title = movie['name']
+            year = movie.get('contentRating', 'N/A')
+            rating = movie['aggregateRating']['ratingValue']
+            description = movie['description']
+            image = movie['image']
+            
+            movies_data.append({
+                'Rank': rank,
+                'Title': title,
+                'Year': year,
+                'Rating': rating,
+                'Description': description,
+                'Image URL': image
+            })
+        
+        df = pd.DataFrame(movies_data)
+        print(df.head())
+
+else:
+    print(f"Failed to fetch the page. Status code: {response.status_code}")
+
+
+import os
+import requests
+from bs4 import BeautifulSoup
+import json
+import pandas as pd
+
+url = 'https://www.imdb.com/chart/top/'
+
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
+    'Accept-Language': 'en-US,en;q=0.9'
+}
+
+response = requests.get(url, headers=headers)
+
+if response.status_code == 200:
+    soup = BeautifulSoup(response.content, 'html.parser')
+    
+    script_tag = soup.find('script', type='application/ld+json')
+    
+    if script_tag:
+        structured_data = json.loads(script_tag.string)
+        
+        movies_data = []
+        for item in structured_data['itemListElement']:
+            movie = item['item']
+            rank = item['@type'].split('/')[-1]
+            title = movie['name']
+            year = movie.get('contentRating', 'N/A')
+            rating = movie['aggregateRating']['ratingValue']
+            description = movie['description']
+            image = movie['image']
+            
+            movies_data.append({
+                'Rank': rank,
+                'Title': title,
+                'Year': year,
+                'Rating': rating,
+                'Description': description,
+                'Image URL': image
+            })
+        
+        df = pd.DataFrame(movies_data)
+        
+        csv_file_path = 'imdb_top_250_movies.csv'
+        
+        df.to_csv(csv_file_path, index=False, encoding='utf-8')
+
+        print(f"Data has been successfully written to {csv_file_path}")
+
+
+else:
+    print(f"Failed to fetch the page. Status code: {response.status_code}")
+
