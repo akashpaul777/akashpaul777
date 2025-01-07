@@ -1,15 +1,12 @@
 👋 Hi, I'm Akash Paul
  
-Welcome to my GitHub profile! I'm a passionate [Your Role or Field] who loves working on innovative projects and exploring new technologies.
+Welcome to my GitHub profile! I'm a passionate Data Analyst who loves working on innovative projects and exploring new technologies.
  
 ---
  
 ## 🌟 About Me
-- 🔭 I’m currently working on **AIML Bootcamp(#)**
-- 🌱 Learning **[Skill or Technology]**
-- 💬 Ask me about **[Your Area of Expertise]**
-- 📫 Reach me at: **[Your Email]**
-- ⚡ Fun fact: **[Something Interesting About You]**
+-* Over 5 years of comprehensive experience in data analysis, with a proven track record of solving complex problems and delivering actionable insights using tools and languages such as PL/SQL, Looker, Tableau, SQL, and Python.
+- 📫 Reach me at: akashpaul.data@gmail.com
  
 ---
  
@@ -65,14 +62,3 @@ Here are some of my best works:
  
 ---
  
-## 🏆 Achievements
-- 🏅 Winner of [Hackathon Name](#) for [Project Name].
-- 🚀 Successfully deployed [Project Name](#) using [Technology Stack].
-- 📜 Published [Research Paper Title](#) in [Journal Name].
- 
----
- 
-## 🎨 How to Use This Template
-1. Replace placeholders like `[Your Name]`, `[YourUsername]`, and `[YourWebsite]`.
-2. Add links to your projects, blog posts, and social profiles.
-3. Customize the badges, graphs, and other visual elements to match your style.
