@@ -11,9 +11,9 @@ Welcome to my GitHub profile! I'm a passionate Data Analyst who loves working on
 ---
  
 ## 🛠️ My Tech Stack
-![Python](https://img.shields.io/badge/Python-3.9-blue)
+
 Languages:
-SQL Python R
+##SQL Python R
 
 Libraries:
 Pandas NumPy Scikit-learn TensorFlow
