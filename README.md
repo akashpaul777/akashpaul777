@@ -12,8 +12,6 @@ Welcome to my GitHub profile! I'm a passionate Data Analyst who loves working on
  
 ## 🛠️ My Tech Stack
 ![Python](https://img.shields.io/badge/Python-3.9-blue)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-![Docker](https://img.shields.io/badge/Docker-Containerization-blue)
 ![React](https://img.shields.io/badge/React-Framework-lightblue)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-DeepLearning-orange)
  
