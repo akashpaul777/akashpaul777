@@ -33,7 +33,7 @@ Cloud:
 ![AWS](https://img.shields.io/badge/AWS-skyblue)
  
 ## 🌐 Connect With Me
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-YourName-blue?logo=linkedin)](https://www.linkedin.com/in/akash-paull/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-AkashPaul-blue?logo=linkedin)](https://www.linkedin.com/in/akash-paull/)
 
 
  
