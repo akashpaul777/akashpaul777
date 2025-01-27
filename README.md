@@ -12,7 +12,20 @@ Welcome to my GitHub profile! I'm a passionate Data Analyst who loves working on
  
 ## 🛠️ My Tech Stack
 ![Python](https://img.shields.io/badge/Python-3.9-blue)
-![React](https://img.shields.io/badge/React-Framework-lightblue)
+Languages:
+SQL Python R
+
+Libraries:
+Pandas NumPy Scikit-learn TensorFlow
+
+Visualization:
+Matplotlib Power BI Tableau
+
+Databases:
+MySQL Postgres MongoDB
+
+Cloud:
+AWS
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-DeepLearning-orange)
  
 ---
